@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
 //create your first component
-
 export function Home() {
 	const [playlist, setPlaylist] = useState([]);
 	let audioPlayer = useRef();
@@ -52,9 +51,9 @@ export function Home() {
 
 	return (
 		<div className="text-center mt-5">
-			<div className="container">
-				<h1>Music Player</h1>
-				<ol>
+			<div className="container corp">
+				<h1 className="headermusic">Music Player</h1>
+				<ol className="bodymusic">
 					{playlist.map((e, i) => {
 						return (
 							<li
@@ -63,23 +62,27 @@ export function Home() {
 								}}
 								key={i}
 								className={song === i ? "select" : ""}>
+								{" "}
 								{e.name}
 							</li>
 						);
 					})}
 				</ol>
-				<div className="buttons">
+				<div className="buttons footermusic">
 					<button onClick={backSong}>
-						<i className="fa fa-caret-left" />
+						<i className="fas fa-chevron-circle-left" />
 					</button>
 					<button onClick={playSong}>
-						<i className="fa fa-play" aria-hidden="true" />
+						<i className="fas fa-play-circle" aria-hidden="true" />
 					</button>
 					<button onClick={pauseSong}>
-						<i className="fa fa-pause" aria-hidden="true" />
+						<i className="far fa-pause-circle" aria-hidden="true" />
 					</button>
 					<button onClick={nextSong}>
-						<i className="fa fa-caret-right" aria-hidden="true" />
+						<i
+							className="fas fa-chevron-circle-right"
+							aria-hidden="true"
+						/>
 					</button>
 				</div>
 			</div>
